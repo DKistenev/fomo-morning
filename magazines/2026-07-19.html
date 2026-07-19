@@ -23,12 +23,16 @@
     .spread-copy { max-width:930px; z-index:1; }
     h2 { margin:22px 0 34px; font-size:clamp(46px,7.6vw,126px); }
     .summary { max-width:720px; margin:0; font-size:clamp(23px,2.5vw,33px); line-height:1.28; }
+    .inside { max-width:760px; margin-top:32px; padding:22px 26px; border:2px solid currentColor; border-radius:18px; }
+    .inside strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
+    .inside ul { margin:12px 0 0; padding-left:25px; font-size:21px; line-height:1.38; }
+    .inside li + li { margin-top:9px; }
     .takeaway { max-width:700px; margin-top:42px; padding:22px 0 0; border-top:4px solid currentColor; }
     .takeaway strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
     .takeaway p { margin:9px 0 0; font-size:23px; line-height:1.35; }
     .tags { display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:34px 0; list-style:none; }
     .tags li { border:2px solid currentColor; border-radius:999px; padding:5px 13px; font-size:18px; font-weight:700; }
-    .read-link { display:inline-block; font-size:22px; font-weight:800; text-decoration-thickness:3px; text-underline-offset:5px; }
+    .source-link { display:inline-block; font-size:18px; font-weight:700; text-underline-offset:4px; opacity:.78; }
     .spread-number { position:absolute; top:20px; right:clamp(28px,7vw,120px); font:800 clamp(110px,22vw,360px)/.7 var(--serif); opacity:.13; }
     .signal { align-self:start; min-width:125px; display:flex; flex-direction:column; text-align:right; z-index:1; }
     .signal span,.signal small { font-size:18px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
@@ -65,9 +69,10 @@
         <p class="eyebrow">OpenAI <span>·</span> 2026-06-30</p>
         <h2>Building self-improving tax agents with Codex</h2>
         <p class="summary">Кейс OpenAI, Thrive и Crete о налоговом агенте на Codex: автоматизация подачи документов, рост точности и ускорение workflow.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Полезен как конкретный паттерн: агент должен измеримо улучшать бизнес-процесс, а не просто генерировать текст.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>Это прикладной кейс, а не анонс модели: агент используется в процессе подготовки и подачи налоговых документов.</li><li>OpenAI описывает связку Codex, Thrive и Crete как систему, которая автоматизирует часть filing workflow и должна улучшать точность; конкретные метрики нужно читать как данные этого кейса, не как универсальный benchmark.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Смотри на него как на паттерн: ценность агента доказывается измеримым улучшением процесса, а не способностью написать ответ.</p></div>
         <ul class="tags"><li>agents</li><li>Codex</li><li>operations</li></ul>
-        <a class="read-link" href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://openai.com/index/building-self-improving-tax-agents-with-codex/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>98</strong><small>/ 100</small></aside>
     </article>
@@ -77,10 +82,11 @@
       <div class="spread-copy">
         <p class="eyebrow">Anthropic <span>·</span> 2026-07-02</p>
         <h2>More details on Fable 5’s cyber safeguards and our jailbreak framework</h2>
-        <p class="summary">Anthropic разбирает cyber-safeguards и jailbreak framework для dual-use сценариев: защитные задачи по поиску уязвимостей нельзя оценивать в отрыве от риска злоупотребления.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Практический ориентир для команд, которые дают агентам доступ к коду, инфраструктуре или security-инструментам.</p></div>
+        <p class="summary">Anthropic разбирает cyber-safeguards и jailbreak framework для dual-use сценариев.</p>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>В cybersecurity одна и та же модельная способность может помогать защитнику искать уязвимость и одновременно облегчать атаку — Anthropic прямо называет этот контекст dual-use.</li><li>Вывод источника не в тотальном запрете: он не планирует блокировать все cyber-задачи, поэтому контроль доступа, контекст и оценка действия важнее простого keyword-фильтра.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Если агент получает доступ к коду или инфраструктуре, проектируй разрешения и review как часть продукта, а не как финальный фильтр.</p></div>
         <ul class="tags"><li>security</li><li>safety</li><li>agents</li></ul>
-        <a class="read-link" href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>96</strong><small>/ 100</small></aside>
     </article>
@@ -91,9 +97,10 @@
         <p class="eyebrow">Simon Willison <span>·</span> 2026-07-02</p>
         <h2>Release: llm-coding-agent 0.1a0</h2>
         <p class="summary">Новый coding-agent в экосистеме LLM предлагает явные разрешения для команд, рецепты запуска и Python API с approval-параметром.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Хороший минимальный референс для безопасного агентного coding workflow: least privilege, allow-list и воспроизводимый интерфейс.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>В релизе показаны режимы вроде `llm code --yolo` и точечные allow-list разрешения для команд, например тестов или `git diff`.</li><li>Python API строится вокруг `CodingAgent(..., approve=True).run(...)`: approval встроен в интерфейс выполнения, а не оставлен неформальной договорённостью оператора.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Для собственного coding-agent workflow начни с allow-list и явного approval, а не с полного shell-доступа.</p></div>
         <ul class="tags"><li>developer tools</li><li>coding agents</li><li>permissions</li></ul>
-        <a class="read-link" href="https://simonwillison.net/2026/Jul/2/llm-coding-agent/" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://simonwillison.net/2026/Jul/2/llm-coding-agent/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>95</strong><small>/ 100</small></aside>
     </article>
@@ -103,10 +110,11 @@
       <div class="spread-copy">
         <p class="eyebrow">Hugging Face Papers <span>·</span> 2026-06</p>
         <h2>WildClawBench: A Benchmark for Real-World, Long-Horizon Agent Evaluation</h2>
-        <p class="summary">WildClawBench предлагает оценивать агентные системы на реальных длительных задачах, а не ограничиваться короткими synthetic benchmark-сценариями.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Полезно для выбора eval-критериев: проверять устойчивость, шаги и результат в длинном workflow, а не только единичный ответ модели.</p></div>
+        <p class="summary">WildClawBench предлагает оценивать агентные системы на реальных длительных задачах, а не только на коротких synthetic benchmark-сценариях.</p>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>WildClawBench заявлен как benchmark для long-horizon агентных задач: оценивается не один ответ модели, а прохождение цепочки действий в реалистичном сценарии.</li><li>Сам факт появления benchmark не доказывает качество конкретного агента; он полезен как шаблон вопроса: какие шаги, сбои и конечный результат измеряются в твоём workflow.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Введи eval, который проверяет устойчивость выполнения и итог артефакта, а не только удачный demo-проход.</p></div>
         <ul class="tags"><li>research</li><li>evals</li><li>agents</li></ul>
-        <a class="read-link" href="https://huggingface.co/papers/2606.05405" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://huggingface.co/papers/2606.05405" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>93</strong><small>/ 100</small></aside>
     </article>
@@ -117,9 +125,10 @@
         <p class="eyebrow">Latent Space <span>·</span> 2026-07</p>
         <h2>5 Trends That Defined AI Engineering at World’s Fair 2026</h2>
         <p class="summary">Итоги AI Engineer World’s Fair: центр тяжести смещается от использования агентов к проектированию систем вокруг агентов.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Помогает пересобрать архитектурный вопрос: не «куда прикрутить чат», а какие данные, контроль и интерфейсы нужны агентной системе.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>Latent Space формулирует сдвиг как переход от «строить с агентами» к «строить системы вокруг агентов»: важны роли, интерфейсы, данные и контуры контроля.</li><li>Это редакционный synthesis материалов конференции, а не независимое измерение рынка; ценность — в полезной архитектурной рамке для обсуждения собственной системы.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>На проектном review спрашивай не «где добавить чат», а какие инструменты, state и approval gates нужны агенту для задачи.</p></div>
         <ul class="tags"><li>AI engineering</li><li>architecture</li><li>agents</li></ul>
-        <a class="read-link" href="https://www.latent.space/p/aiewf26trends" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://www.latent.space/p/aiewf26trends" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>92</strong><small>/ 100</small></aside>
     </article>
@@ -130,9 +139,10 @@
         <p class="eyebrow">Every <span>·</span> 2026-07</p>
         <h2>Inside Anthropic’s 2026 Developer Conference</h2>
         <p class="summary">Every описывает, как Spiral применяет Claude Managed Agents через API и CLI, чтобы разработчики и другие агенты работали вне веб-интерфейса.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Практический сигнал о переходе от одиночного чата к агентам, доступным из привычных dev-инструментов и автоматизаций.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>В разборе Every продукт Spiral использует Claude Managed Agents через API и CLI — агенты доступны не только через browser chat, но и из инструментов разработчика.</li><li>Это опыт конкретного продукта Every, а не нейтральный benchmark платформы; главный сигнал — рост роли agent-friendly API и CLI в рабочих процессах.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>При выборе AI-инструмента оценивай, есть ли у него нормальный интерфейс для автоматизации, а не только красивый чат.</p></div>
         <ul class="tags"><li>developer tools</li><li>agents</li><li>CLI</li></ul>
-        <a class="read-link" href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://every.to/chain-of-thought/inside-anthropic-s-2026-developer-conference" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>90</strong><small>/ 100</small></aside>
     </article>
@@ -143,9 +153,10 @@
         <p class="eyebrow">The Batch <span>·</span> 2026-07</p>
         <h2>OpenAI’s GPT-5.6 Family, New Ways to Train Robots, Models Invoking Models</h2>
         <p class="summary">The Batch связывает GPT-5.6 с распространением safety-ограничений на более дешёвые и быстрые модели, а также собирает новости о роботах и model-to-model workflows.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Нужно учитывать safety и ограничения не только при выборе флагманской модели, но и в массовых высоконагруженных сервисах.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>В обзоре The Batch обсуждается перенос safety-подходов на более доступные модели семейства GPT-5.6, а не только на самый дорогой frontier tier.</li><li>Это newsletter-обзор, который объединяет несколько тем — роботов и модели, вызывающие модели; для конкретных продуктовых решений его стоит дополнять первичным system card или документацией.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Не предполагай, что дешёвая модель автоматически означает меньший security или compliance риск: проверяй guardrails и лимиты отдельно.</p></div>
         <ul class="tags"><li>models</li><li>safety</li><li>robotics</li></ul>
-        <a class="read-link" href="https://www.deeplearning.ai/the-batch/issue-360" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://www.deeplearning.ai/the-batch/issue-360" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>88</strong><small>/ 100</small></aside>
     </article>
@@ -155,10 +166,11 @@
       <div class="spread-copy">
         <p class="eyebrow">Import AI <span>·</span> 2026-07-06</p>
         <h2>Import AI 464: Fables writes GPU kernels, AI automation and analog computation</h2>
-        <p class="summary">Выпуск Import AI соединяет кейс генерации GPU-ядeр с темами автоматизации и analog computation — полезный срез того, как модели заходят в низкоуровневые технические задачи.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Хорошая проверка границы применимости: следить не только за интерфейсами, но и за тем, где AI меняет performance-critical слой.</p></div>
+        <p class="summary">Выпуск Import AI соединяет кейс генерации GPU-ядер с темами автоматизации и analog computation.</p>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>Import AI собирает кейс, в котором Fable пишет GPU kernels, рядом с заметками об автоматизации и analog computation — это сигнал проникновения моделей в performance-critical инженерный слой.</li><li>Выпуск — кураторский обзор нескольких работ, а не единая экспериментальная статья; детали производительности и методологии нужно проверять в первичных работах.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Следи не только за AI-UI, но и за задачами ниже по стеку: там автоматизация может влиять на стоимость и скорость R&amp;D.</p></div>
         <ul class="tags"><li>GPU</li><li>automation</li><li>research</li></ul>
-        <a class="read-link" href="https://jack-clark.net/2026/07/06/import-ai-464-fables-writes-gpu-kernels-ai-automation-and-analog-computation/" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://jack-clark.net/2026/07/06/import-ai-464-fables-writes-gpu-kernels-ai-automation-and-analog-computation/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>87</strong><small>/ 100</small></aside>
     </article>
@@ -168,10 +180,11 @@
       <div class="spread-copy">
         <p class="eyebrow">Don’t Worry About the Vase <span>·</span> 2026-07-19</p>
         <h2>AI #177 Part 1: Tip of the Iceberg</h2>
-        <p class="summary">Свежий обзор Zvi собирает релизы недели и спор о том, как policymakers интерпретируют темпы развития AI и аргументы о необходимости действий.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Полезен как risk lens: отделять факты о релизах от предположений о регулировании, темпах и последствиях.</p></div>
+        <p class="summary">Свежий обзор Zvi собирает релизы недели и спор о том, как policymakers интерпретируют темпы развития AI.</p>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>Zvi собирает релизы недели и отдельно разбирает разрыв между техническими оценками развития AI и тем, как эти сценарии воспринимают policymakers.</li><li>Это аналитическая колонка с авторской позицией, а не первичный policy-документ; она полезна для карты аргументов и рисков, но не для фиксации фактов без сверки.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Разделяй в планировании три слоя: факт о релизе, прогноз о темпе и нормативное предложение о том, что с этим делать.</p></div>
         <ul class="tags"><li>policy</li><li>risk</li><li>frontier AI</li></ul>
-        <a class="read-link" href="https://thezvi.substack.com/p/ai-177-part-1-tip-of-the-iceberg" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://thezvi.substack.com/p/ai-177-part-1-tip-of-the-iceberg" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>84</strong><small>/ 100</small></aside>
     </article>
@@ -182,9 +195,10 @@
         <p class="eyebrow">Jeff’s Jabs <span>·</span> 2026-07-16</p>
         <h2>AI Removed Every Excuse. What’s Left Is Permission.</h2>
         <p class="summary">Колонка о человеческом выборе и инициативе в ситуации, когда AI резко снижает стоимость производства и исполнения идей.</p>
-        <div class="takeaway"><strong>Практический вывод</strong><p>Полезный контрвес технике: автоматизация сама по себе не заменяет ответственность за выбор задачи, аудиторию и последствия.</p></div>
+        <section class="inside" aria-label="Что произошло"><strong>Что произошло</strong><ul><li>Jeff Bullas строит эссе вокруг тезиса: когда AI убирает часть барьеров на создание и исполнение, дефицитом становится не генерация, а решение действовать и брать ответственность.</li><li>Это позиционный текст, не исследование и не продуктовая документация; его место в выпуске — человеческий и стратегический контрвес техническим материалам.</li></ul></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Используй автоматизацию для увеличения числа качественных попыток, но не отдавай агенту выбор цели, аудитории и допустимого риска.</p></div>
         <ul class="tags"><li>human factors</li><li>strategy</li><li>AI culture</li></ul>
-        <a class="read-link" href="https://www.jeffbullas.com/ai-permission/" rel="noopener noreferrer">Открыть первоисточник <span aria-hidden="true">↗</span></a>
+        <a class="source-link" href="https://www.jeffbullas.com/ai-permission/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
       </div>
       <aside class="signal"><span>signal</span><strong>78</strong><small>/ 100</small></aside>
     </article></main>
