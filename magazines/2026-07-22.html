@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FOMO-утро — 10 практичных материалов об AI.">
+  <title>FOMO-утро — 2026-07-22</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#161616; --paper:#f6f1e8; --sans:Inter,system-ui,sans-serif; --serif:Fraunces,Georgia,serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:20px; line-height:1.55; }
+    a { color:inherit; }
+    .masthead { min-height:72vh; padding:clamp(28px,6vw,92px); display:grid; align-content:space-between; background:#e8ddca; }
+    .kicker,.eyebrow { margin:0; text-transform:uppercase; letter-spacing:.08em; font-weight:800; font-size:18px; }
+    h1,h2 { margin:0; font-family:var(--serif); letter-spacing:-.045em; line-height:.95; }
+    h1 { max-width:1100px; font-size:clamp(64px,13vw,190px); }
+    .deck { max-width:780px; margin:30px 0 0; font-size:clamp(24px,3vw,38px); line-height:1.22; }
+    .issue-date { justify-self:end; font-size:20px; font-weight:700; }
+    .spread { position:relative; min-height:780px; padding:clamp(32px,7vw,120px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:42px; overflow:hidden; }
+    .spread-copy { max-width:930px; z-index:1; }
+    h2 { margin:22px 0 34px; font-size:clamp(46px,7.6vw,126px); }
+    .summary { max-width:720px; margin:0; font-size:clamp(23px,2.5vw,33px); line-height:1.28; }
+    .context { max-width:760px; margin-top:30px; }
+    .context strong,.inside strong,.caveat strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
+    .context p,.caveat p { margin:9px 0 0; font-size:21px; line-height:1.38; }
+    .inside { max-width:760px; margin-top:26px; padding:22px 26px; border:2px solid currentColor; border-radius:18px; }
+    .inside ul { margin:12px 0 0; padding-left:25px; font-size:21px; line-height:1.38; }
+    .inside li + li { margin-top:9px; }
+    .caveat { max-width:730px; margin-top:22px; padding:0 0 0 20px; border-left:5px solid currentColor; }
+    .takeaway { max-width:700px; margin-top:36px; padding:22px 0 0; border-top:4px solid currentColor; }
+    .takeaway strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
+    .takeaway p { margin:9px 0 0; font-size:23px; line-height:1.35; }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:34px 0; list-style:none; }
+    .tags li { border:2px solid currentColor; border-radius:999px; padding:5px 13px; font-size:18px; font-weight:700; }
+    .source-link { display:inline-block; font-size:18px; font-weight:700; text-underline-offset:4px; opacity:.78; }
+    .spread-number { position:absolute; top:20px; right:clamp(28px,7vw,120px); font:800 clamp(110px,22vw,360px)/.7 var(--serif); opacity:.13; }
+    .signal { align-self:start; min-width:125px; display:flex; flex-direction:column; text-align:right; z-index:1; }
+    .signal span,.signal small { font-size:18px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .signal strong { font:800 clamp(56px,7vw,104px)/.8 var(--serif); }
+    .lead { background:#e6bf5a; }
+    .lead h2 { max-width:900px; }
+    .midnight { background:#111827; color:#f7f3e8; }
+    .blush { background:#f7c9cf; }
+    .terminal { background:#0c2318; color:#b6ffa1; font-family:ui-monospace,SFMono-Regular,monospace; }
+    .terminal h2 { font-family:ui-monospace,SFMono-Regular,monospace; letter-spacing:-.08em; }
+    .academic { background:#e6e9f0; color:#202951; }
+    .academic .spread-copy { border-left:8px solid #202951; padding-left:28px; }
+    .data { background:#ffe7df; color:#7a1c29; }
+    .data .signal strong { font-size:clamp(88px,13vw,188px); }
+    .field-notes { background:#d8e6c4; color:#223819; }
+    .blueprint { background:#d8edf5; color:#0c3554; background-image:linear-gradient(rgba(12,53,84,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(12,53,84,.12) 1px,transparent 1px); background-size:34px 34px; }
+    .privacy { background:#28202d; color:#f7d7ff; }
+    .closing { background:#f4f0e9; border-top:10px solid #e4462f; border-bottom:10px solid #e4462f; }
+    footer { padding:54px 8vw; background:#161616; color:#f6f1e8; font-size:20px; }
+    footer p { max-width:820px; margin:0; }
+    @media (max-width:720px) { .masthead{min-height:62vh;} .spread{min-height:720px;grid-template-columns:1fr;padding:40px 24px 64px;} .signal{position:relative;text-align:left;order:-1;} .signal strong{font-size:64px!important;} .spread-number{right:18px;} .summary,.takeaway p{font-size:22px;} }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <p class="kicker">Ежедневный журнал · AI / Tech / Builder signal</p>
+    <div><h1>FOMO-утро</h1><p class="deck">Десять материалов, которые стоит не просто прочитать, а применить.</p></div>
+    <p class="issue-date">Выпуск 2026-07-22</p>
+  </header>
+  <main>
+    <article class="spread lead" id="article-1">
+      <div class="spread-number">01</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Anthropic News <span>·</span> 30 июня 2026</p>
+        <h2>Introducing Claude Sonnet 5</h2>
+        <p class="summary">Anthropic выпустила Sonnet 5 как более доступную модель для агентных задач: планирования, работы с инструментами, кодом и задачами знания.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Для продуктовых команд агентная автоматизация упирается не только в максимальное качество модели, но и в цену, задержку и пригодность к непрерывной работе с браузером, терминалом и API. Новая Sonnet-линейка важна именно как попытка перенести более сильное агентное поведение в класс модели, который обычно используют значительно шире, чем флагман.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Anthropic заявляет, что Sonnet 5 умеет строить планы и использовать инструменты, включая браузер и терминал.</li><li>В сравнении с Sonnet 4.6 компания приводит улучшения по рассуждению, tool use, программированию и knowledge work; подробные оценки вынесены в system card.</li><li>Модель стала default для Free и Pro и доступна в Claude Code и Claude Platform; Anthropic описывает её результаты как близкие к Opus 4.8 при меньшей цене.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Сравнения и вывод о безопасности опубликованы самим поставщиком; это не независимый бенчмарк и не гарантия корректности автономного выполнения конкретного рабочего процесса.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Пересчитайте стоимость агентных сценариев на Sonnet 5, но оставьте ограничения прав, проверку diff/результата и eval-набор: более сильный tool use не отменяет контроля исполнения.</p></div>
+        <ul class="tags"><li>агенты</li><li>coding</li><li>tool use</li></ul>
+        <a class="source-link" href="https://www.anthropic.com/news/claude-sonnet-5" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>96</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread midnight" id="article-2">
+      <div class="spread-number">02</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Anthropic News <span>·</span> 6 июля 2026</p>
+        <h2>Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems</h2>
+        <p class="summary">Кейс правительства Альберты показывает применение Claude Code для поиска и устранения уязвимостей в крупном, в том числе устаревшем, кодовом ландшафте.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Безопасность большого наследуемого кода часто ограничена инвентаризацией, объёмом ревью и дефицитом контекста: нельзя просто попросить модель «исправить всё» и считать это аудитом. Практическая ценность кейса — в масштабе и в том, что он связывает сканирование с remediation и документацией процесса.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>По данным кейса, с 2025 года команда Alberta использует Claude Code с моделями Opus и Sonnet для ревью систем, поиска уязвимостей и исправлений.</li><li>Anthropic сообщает о сканировании 466 млн строк кода за 20 часов и о создании дополнительных инструментов для повышения безопасности систем.</li><li>В материале указано, что Alberta опубликовала технические white papers о своей работе для других государственных организаций.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это case study поставщика: приведённые сроки и эффект не раскрывают полный дизайн проверки, false positives, стоимость и долю исправлений, принятых после человеческого ревью.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Используйте ИИ-аудит как конвейер «инвентарь → гипотеза → воспроизводимая проверка → PR → security review», а не как автономный сканер с правом на продакшн-изменения.</p></div>
+        <ul class="tags"><li>кибербезопасность</li><li>legacy code</li><li>governance</li></ul>
+        <a class="source-link" href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>94</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread blush" id="article-3">
+      <div class="spread-number">03</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Anthropic News <span>·</span> 2 июля 2026</p>
+        <h2>More details on Fable 5’s cyber safeguards and our jailbreak framework</h2>
+        <p class="summary">Anthropic описывает safety-classifiers для опасных киберсценариев Fable 5 и черновую шкалу тяжести jailbreak-обходов.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Командам, подключающим модели к инструментам, недостаточно знать, что «есть защита»: нужны понятные границы класса угроз, политика реакции и общий язык для обсуждения обходов. Материал полезен как пример того, что safety-слой вокруг модели — отдельный продуктовый и операционный контур.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Компания называет safety classifiers сопутствующими ИИ-системами, которые обнаруживают и блокируют опасные или потенциально опасные кибериспользования.</li><li>Публикация обещает описать, какие типы вреда классификаторы предназначены предотвращать и какие — нет.</li><li>Черновой jailbreak severity framework предлагает различать обходы по тяжести: от разблокирования сравнительно незначательных нежелательных действий до широкого снятия ограничений.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это ранний черновик позиции Anthropic, а не отраслевой стандарт; классификаторы могут ошибаться и не заменяют собственные ограничения инструментов, журналирование и реагирование.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>В threat model агента отделите модельные фильтры от контроля доступа: классифицируйте инциденты по влиянию, а опасные действия защищайте независимыми policy checks.</p></div>
+        <ul class="tags"><li>safety</li><li>jailbreak</li><li>security</li></ul>
+        <a class="source-link" href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>91</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread terminal" id="article-4">
+      <div class="spread-number">04</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Kimi Tech Blog <span>·</span> июль 2026 · дата на странице не указана</p>
+        <h2>Kimi K3 Tech Blog: Open Frontier Intelligence</h2>
+        <p class="summary">Технический блог Kimi публикует собственные результаты K3 в задачах оптимизации GPU-ядер и описывает условия сравнения.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Кодовые агенты становятся полезны не только для генерации прикладного кода, но и для производительной инженерии — профилирования, переписывания и бенчмаркинга вычислительных ядер. Здесь особенно важно читать не только место в таблице, но и sandbox, бюджет времени, допуски точности и возможные fallback-механизмы.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>В описанном тесте каждой модели дали одинаковый sandbox и до 24 часов на профилирование, переписывание и бенчмаркинг четырёх GPU-задач.</li><li>Задачи охватывали AttnRes, KDA и MLA-ядро с head dimension 512 на NVIDIA H200 и другом GPGPU-оборудовании.</li><li>Kimi сообщает, что K3 был конкурентен Fable 5 и превзошёл ряд названных моделей в этом тесте; авторы отдельно оговаривают численные допуски и то, что оценка Fable 5 третьей стороной могла включать fallback.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это self-reported benchmark от разработчика модели; результат относится к конкретному sandbox и четырём задачам, поэтому не доказывает превосходство в общем программировании или вашем железе.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Если оптимизация ядер важна, воспроизведите узкий benchmark на собственных workload: фиксируйте точность, стоимость, время и ручной review до принятия заявлений поставщика.</p></div>
+        <ul class="tags"><li>open models</li><li>GPU kernels</li><li>benchmark</li></ul>
+        <a class="source-link" href="https://www.kimi.com/blog/kimi-k3" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>89</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread academic" id="article-5">
+      <div class="spread-number">05</div>
+      <div class="spread-copy">
+        <p class="eyebrow">OSWorld 2.0 <span>·</span> июль 2026 · дата на странице не указана</p>
+        <h2>OSWorld 2.0: Benchmarking computer-use agents on long-horizon real-world tasks</h2>
+        <p class="summary">OSWorld 2.0 предлагает длинные реалистичные задачи для computer-use агентов и показывает большой разрыв между частичным прогрессом и завершением работы.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Демо агента в коротком веб-формуляре не измеряет способность вести реальную работу: сохранять ограничения, обрабатывать новые сообщения, связывать документы и проверять результат. Нужны задачи с состоянием, несколькими приложениями и промежуточными контрольными точками — именно их пытается приблизить OSWorld 2.0.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Набор содержит 108 long-horizon workflows на 31 self-hosted сайте; 69,6% задач занимают у человека более часа, среднее число агентных шагов указано как более 250.</li><li>Авторы приводят медиану человеческого выполнения около 1,6 часа и среднее 318 tool calls для Claude Opus 4.7 с maximum thinking, против примерно 30 в OSWorld 1.0.</li><li>На метрике полного завершения при 500 шагах лучший приведённый результат — 20,6%; в описании ошибок названы потеря ограничений, пропуск новой информации, угадывание вместо вопроса и отсутствие проверки.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Бенчмарк использует собственные сайты и задачи; он гораздо ближе к реальной работе, но всё равно не равен вашим данным, политикам доступа и последствиям ошибок.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Не выпускайте computer-use агента по коротким demo-eval: добавьте длинные сценарии с изменением состояния, обязательным уточнением и финальной верификацией результата.</p></div>
+        <ul class="tags"><li>computer use</li><li>evals</li><li>agents</li></ul>
+        <a class="source-link" href="https://osworld-v2.xlang.ai/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>93</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread data" id="article-6">
+      <div class="spread-number">06</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Hugging Face Papers · UIUC <span>·</span> 22 июля 2026</p>
+        <h2>AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents</h2>
+        <p class="summary">AgentDebugX предлагает open-source контур диагностики агентных сбоев: обнаружение, attribution, recovery и повторный запуск.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>У агентного прогона ошибка часто проявляется значительно позже, чем её первопричина: финальный неверный ответ не объясняет, где был потерян контекст, выбран плохой инструмент или нарушено предположение. Одного воспроизведения trace недостаточно, если команда не может перейти от симптома к проверяемому исправлению.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Авторы формулируют проблему так: шаг, на котором ошибка видна, нередко не совпадает с шагом, который её вызвал.</li><li>AgentDebugX описан как open-source debugging framework с замкнутым циклом Detect, Attribute, Recover и Rerun.</li><li>Работа противопоставляет этот подход инструментам observability, которые умеют воспроизводить execution traces, но слабо помогают с root-cause attribution и переводом диагноза в recovery.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это свежая исследовательская работа; наличие framework не доказывает, что он совместим с вашим стеком или повышает надёжность без качественных трасс, тестов и воспроизводимого окружения.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Собирайте trace не только для просмотра: привяжите к нему классификацию причины, recovery action и rerun-eval, чтобы каждое исправление можно было измерить.</p></div>
+        <ul class="tags"><li>observability</li><li>debugging</li><li>open source</li></ul>
+        <a class="source-link" href="https://huggingface.co/papers/2607.18754" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>90</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread field-notes" id="article-7">
+      <div class="spread-number">07</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Hugging Face Papers · Peking University <span>·</span> 18 июля 2026</p>
+        <h2>DataFlow-Harness: A Grounded Code-Agent Platform for Constructing Editable LLM Data Pipelines</h2>
+        <p class="summary">DataFlow-Harness рассматривает разрыв между кодом, сгенерированным агентом, и сохраняемыми редактируемыми data-pipeline артефактами.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Текстовый запрос к coding agent часто заканчивается одноразовым скриптом. Для эксплуатации данных важнее, чтобы результат стал понятным графом, который можно проверить, сохранить, править и обслуживать другим инженерам. Авторы называют этот разрыв NL2Pipeline gap.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Работа отмечает, что coding agents обычно создают скрипты, но не материализуют их автоматически в persistent и editable platform artifacts.</li><li>Для закрытия NL2Pipeline gap предлагается DataFlow-Harness — платформа, направляющая LLM-агента к построению platform-native directed acyclic graphs (DAG).</li><li>Страница Hugging Face указывает дату публикации работы 18 июля и дату представления в ленте 22 июля 2026.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Платформенно-нативный DAG не универсален: ценность решения зависит от интеграции с конкретным оркестратором, схемами, правами и процессом review.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Формулируйте агенту результат как версионируемый DAG с входами, выходами, тестами и владельцем — не как «напиши pipeline», который останется непрозрачным скриптом.</p></div>
+        <ul class="tags"><li>data engineering</li><li>DAG</li><li>code agents</li></ul>
+        <a class="source-link" href="https://huggingface.co/papers/2607.16617" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>88</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread blueprint" id="article-8">
+      <div class="spread-number">08</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Every · Working Overtime <span>·</span> 20 июля 2026</p>
+        <h2>Why Some AI Workflows Stick—And Others Don’t</h2>
+        <p class="summary">Практическая заметка о том, почему автоматизация не становится привычкой: ценность должна превышать не только время запуска, но и постоянную цену поддержки.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Собрать персонального агента стало дешево, но жизнеспособность workflow определяется повторяемой потребностью, подходящим пользовательским поведением и качеством контекста. Если автоматизация генерирует ещё одну очередь на разбор, она может ухудшить работу даже при технически правильном результате.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Автор описывает Codex-автоматизацию, которая ежедневно предлагала посты для X и LinkedIn, но не была использована: рекомендованный ритм не совпал с фактическим стилем работы.</li><li>В другом примере поддержка ассистента Margot стала требовать больше времени, чем возвращала пользователю.</li><li>Из этого опыта автор выделяет практическую роль контекста: tailored context помогает Codex или Claude находить нужное в его desktop setup.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это личный опыт, а не контролируемое исследование; он полезен для дизайна пилотов, но не даёт универсального порога ROI.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Для каждого workflow измерьте не только execution time, но и еженедельную стоимость обслуживания, фактическое принятие результата и число ручных доработок; не прошедшие тест — закрывайте.</p></div>
+        <ul class="tags"><li>workflow</li><li>context</li><li>ROI</li></ul>
+        <a class="source-link" href="https://every.to/working-overtime/why-some-ai-workflows-stick-and-others-don-t" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>84</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread privacy" id="article-9">
+      <div class="spread-number">09</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Latent Space <span>·</span> 14 июля 2026</p>
+        <h2>5 Trends That Defined AI Engineering at World’s Fair 2026</h2>
+        <p class="summary">Обзор AI Engineer World’s Fair фиксирует смещение фокуса от одиночного агента к системам вокруг него: harness, context, evals и orchestration.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Наивная архитектура «подключить LLM к инструментам» не делает продукт надёжным. С ростом автономности инженерная работа перемещается к окружению агента: контексту, тестам, наблюдаемости, управлению задачами и границам человеческого контроля.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Автор противопоставляет раннее описание LLM-агента через planning, memory и tools текущему фокусу на системах вокруг агентов.</li><li>В качестве сложившихся практик названы построение coding agents, проектирование harnesses, управление контекстом, оценка outputs и orchestration автономных систем.</li><li>Материал отмечает, что на конференции обсуждались Claude Code, Codex, Gemini CLI, Cursor и Warp, а не ранний AutoGPT; агенты в основном позиционировались как усиление инженера, а не его замена.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это редакционный synthesis конференции, а не репрезентативный опрос рынка и не техническая спецификация инструментов.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Планируйте roadmap агента как платформенный: сначала harness, контекст, evals и review-интерфейс, затем расширение автономии и числа инструментов.</p></div>
+        <ul class="tags"><li>AI engineering</li><li>evals</li><li>orchestration</li></ul>
+        <a class="source-link" href="https://www.latent.space/p/aiewf26trends" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>86</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread closing" id="article-10">
+      <div class="spread-number">10</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Simon Willison’s Weblog <span>·</span> 21 июля 2026</p>
+        <h2>A Fireside Chat with Cat and Thariq from the Claude Code team</h2>
+        <p class="summary">Конспект разговора с командой Claude Code даёт редкие операционные детали: внутреннее внедрение, retention-gate и границы автоматического code review.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>В агентном программировании самый опасный разрыв — между эффектной демонстрацией и устойчивой инженерной практикой. Внутреннее dogfooding, измерение удержания и раздельная политика для критических и периферийных изменений создают более проверяемую траекторию внедрения, чем просто включение автокоммитов.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>В конспекте заявлено, что Claude Tag, совместная Slack-интеграция, создаёт 65% product-engineering PR команды Claude Code.</li><li>Команда сначала выпускает возможности для сотрудников Anthropic и публикует их шире только при наблюдаемом retention у этой группы.</li><li>Критические изменения по-прежнему проходят ручной review, тогда как automated code review всё чаще применяют для «outer layers» продукта.</li><li>Автор также передаёт позицию команды, что добавление примеров в system prompt уже не считается лучшей практикой для Fable 5 и даже Opus 4.8.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это отредактированный конспект и заявления команды, а не независимый аудит; доля PR не раскрывает размер, сложность или качество этих изменений.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Внедряйте coding agent ступенчато: внутренний контур → retention/качество → расширение прав; критические пути оставляйте за человеком и отдельными проверками.</p></div>
+        <ul class="tags"><li>Claude Code</li><li>dogfooding</li><li>code review</li></ul>
+        <a class="source-link" href="https://simonwillison.net/2026/Jul/21/cat-and-thariq/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>87</strong><small>/ 100</small></aside>
+    </article></main>
+  <footer><p>FOMO-утро собирает практические сигналы об AI-инструментах, технологиях, разработке, приватности и науке. Оценка signal — редакционный приоритет для этого выпуска, не мера объективной истинности.</p></footer>
+</body>
+</html>
