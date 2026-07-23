@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FOMO-утро — 10 практичных материалов об AI.">
+  <title>FOMO-утро — 2026-07-23</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#161616; --paper:#f6f1e8; --sans:Inter,system-ui,sans-serif; --serif:Fraunces,Georgia,serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:20px; line-height:1.55; }
+    a { color:inherit; }
+    .masthead { min-height:72vh; padding:clamp(28px,6vw,92px); display:grid; align-content:space-between; background:#e8ddca; }
+    .kicker,.eyebrow { margin:0; text-transform:uppercase; letter-spacing:.08em; font-weight:800; font-size:18px; }
+    h1,h2 { margin:0; font-family:var(--serif); letter-spacing:-.045em; line-height:.95; }
+    h1 { max-width:1100px; font-size:clamp(64px,13vw,190px); }
+    .deck { max-width:780px; margin:30px 0 0; font-size:clamp(24px,3vw,38px); line-height:1.22; }
+    .issue-date { justify-self:end; font-size:20px; font-weight:700; }
+    .spread { position:relative; min-height:780px; padding:clamp(32px,7vw,120px); display:grid; grid-template-columns:minmax(0,1fr) auto; gap:42px; overflow:hidden; }
+    .spread-copy { max-width:930px; z-index:1; }
+    h2 { margin:22px 0 34px; font-size:clamp(46px,7.6vw,126px); }
+    .summary { max-width:720px; margin:0; font-size:clamp(23px,2.5vw,33px); line-height:1.28; }
+    .context { max-width:760px; margin-top:30px; }
+    .context strong,.inside strong,.caveat strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
+    .context p,.caveat p { margin:9px 0 0; font-size:21px; line-height:1.38; }
+    .inside { max-width:760px; margin-top:26px; padding:22px 26px; border:2px solid currentColor; border-radius:18px; }
+    .inside ul { margin:12px 0 0; padding-left:25px; font-size:21px; line-height:1.38; }
+    .inside li + li { margin-top:9px; }
+    .caveat { max-width:730px; margin-top:22px; padding:0 0 0 20px; border-left:5px solid currentColor; }
+    .takeaway { max-width:700px; margin-top:36px; padding:22px 0 0; border-top:4px solid currentColor; }
+    .takeaway strong { font-size:20px; text-transform:uppercase; letter-spacing:.06em; }
+    .takeaway p { margin:9px 0 0; font-size:23px; line-height:1.35; }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:34px 0; list-style:none; }
+    .tags li { border:2px solid currentColor; border-radius:999px; padding:5px 13px; font-size:18px; font-weight:700; }
+    .source-link { display:inline-block; font-size:18px; font-weight:700; text-underline-offset:4px; opacity:.78; }
+    .spread-number { position:absolute; top:20px; right:clamp(28px,7vw,120px); font:800 clamp(110px,22vw,360px)/.7 var(--serif); opacity:.13; }
+    .signal { align-self:start; min-width:125px; display:flex; flex-direction:column; text-align:right; z-index:1; }
+    .signal span,.signal small { font-size:18px; text-transform:uppercase; letter-spacing:.08em; font-weight:800; }
+    .signal strong { font:800 clamp(56px,7vw,104px)/.8 var(--serif); }
+    .lead { background:#e6bf5a; }
+    .lead h2 { max-width:900px; }
+    .midnight { background:#111827; color:#f7f3e8; }
+    .blush { background:#f7c9cf; }
+    .terminal { background:#0c2318; color:#b6ffa1; font-family:ui-monospace,SFMono-Regular,monospace; }
+    .terminal h2 { font-family:ui-monospace,SFMono-Regular,monospace; letter-spacing:-.08em; }
+    .academic { background:#e6e9f0; color:#202951; }
+    .academic .spread-copy { border-left:8px solid #202951; padding-left:28px; }
+    .data { background:#ffe7df; color:#7a1c29; }
+    .data .signal strong { font-size:clamp(88px,13vw,188px); }
+    .field-notes { background:#d8e6c4; color:#223819; }
+    .blueprint { background:#d8edf5; color:#0c3554; background-image:linear-gradient(rgba(12,53,84,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(12,53,84,.12) 1px,transparent 1px); background-size:34px 34px; }
+    .privacy { background:#28202d; color:#f7d7ff; }
+    .closing { background:#f4f0e9; border-top:10px solid #e4462f; border-bottom:10px solid #e4462f; }
+    footer { padding:54px 8vw; background:#161616; color:#f6f1e8; font-size:20px; }
+    footer p { max-width:820px; margin:0; }
+    @media (max-width:720px) { .masthead{min-height:62vh;} .spread{min-height:720px;grid-template-columns:1fr;padding:40px 24px 64px;} .signal{position:relative;text-align:left;order:-1;} .signal strong{font-size:64px!important;} .spread-number{right:18px;} .summary,.takeaway p{font-size:22px;} }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <p class="kicker">Ежедневный журнал · AI / Tech / Builder signal</p>
+    <div><h1>FOMO-утро</h1><p class="deck">Десять материалов, которые стоит не просто прочитать, а применить.</p></div>
+    <p class="issue-date">Выпуск 2026-07-23</p>
+  </header>
+  <main>
+    <article class="spread lead" id="article-1">
+      <div class="spread-number">01</div>
+      <div class="spread-copy">
+        <p class="eyebrow">OpenAI News <span>·</span> 15 июля 2026</p>
+        <h2>GPT‑Red: Unlocking Self‑Improvement for Robustness</h2>
+        <p class="summary">OpenAI описывает GPT‑Red — систему автоматизированного red teaming, в которой атакующая и защищающаяся модели обучаются через self-play.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Проверка агентных систем вручную плохо масштабируется: команды не успевают перебрать комбинации prompt injection, небезопасных инструментов и ошибок в цепочке действий. Нужен процесс, который ищет реальные отказы и одновременно проверяет, не ломает ли защита полезную работу агента.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>В описании OpenAI атакующая модель получает награду за валидные найденные сбои, включая prompt injection.</li><li>Защищающиеся LLM получают награду за сопротивление атаке при сохранении выполнения исходной задачи.</li><li>Подход построен как self-play RL: атака и защита улучшаются в одной тренировочной петле, а не как разовый набор ручных тестов.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это первичное описание OpenAI, а не независимый аудит; заявленная эффективность и переносимость на конкретный стек требуют собственной проверки на его инструментах и политиках.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Добавьте adversarial-тесты в CI для агентных сценариев: измеряйте не только число заблокированных атак, но и долю нормальных задач, которые защита по-прежнему выполняет.</p></div>
+        <ul class="tags"><li>безопасность</li><li>агенты</li><li>red teaming</li></ul>
+        <a class="source-link" href="https://openai.com/index/unlocking-self-improvement-gpt-red/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>96</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread midnight" id="article-2">
+      <div class="spread-number">02</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Hugging Face Papers <span>·</span> 14 июля 2026</p>
+        <h2>Harness Handbook: Making Evolving Agent Harnesses Readable, Navigable, and Editable</h2>
+        <p class="summary">Работа предлагает автоматически строить карту поведения agent harness и вести кодового агента от наблюдаемого поведения к проверенным местам в исходниках.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Когда агентный harness разрастается, просьба «измени поведение X» превращается в поиск по неочевидным промптам, маршрутам инструментов и управляющим веткам. Модель, которая правит код только по совпадению слов, легко меняет не тот слой и создаёт регрессии.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Авторы предлагают behavior-centric карту, связывающую наблюдаемое поведение harness с исходным кодом.</li><li>Behavior-Guided Progressive Disclosure раскрывает агенту сначала высокоуровневую карту, затем подтверждённые места реализации.</li><li>В экспериментах на двух open-source harness авторы сообщают о лучшей локализации поведения, планировании правок и меньшем числе токенов у планировщика.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это препринт с оценкой всего на двух открытых harness; результаты не доказывают такую же надёжность на закрытых production-системах.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Для большого agent runtime поддерживайте живую карту «поведение → тест → код» и требуйте от кодового агента ссылку на неё до внесения правки.</p></div>
+        <ul class="tags"><li>agent engineering</li><li>кодовые агенты</li><li>research</li></ul>
+        <a class="source-link" href="https://huggingface.co/papers/2607.13285" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>94</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread blush" id="article-3">
+      <div class="spread-number">03</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Hugging Face Papers <span>·</span> 13 июля 2026</p>
+        <h2>RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM</h2>
+        <p class="summary">RAGU — заявленный как MIT-licensed и pip-installable GraphRAG-движок, который разделяет извлечение фактов и консолидацию графа знаний.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Обычный RAG часто возвращает похожие фрагменты, но слабо отвечает на вопросы, где нужно связать сущности и доказательства из разных документов. GraphRAG обещает явную структуру, однако его стоимость и сложность извлечения мешают практическому внедрению.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Конвейер разделяет typed extraction и консолидацию: применяются DBSCAN-дедупликация, LLM-сводки и Leiden community detection.</li><li>В работе выпущен 7B-экстрактор Meno-Lite-0.1.</li><li>Авторы сообщают о 12,5% относительном росте harmonic mean против Qwen2.5-32B для построения knowledge graph и evidence recall до 0,84 на GraphRAG-Bench Medical.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Цифры — авторские результаты препринта; их нужно воспроизвести на собственном корпусе, а качество извлечения чувствительно к домену и схеме сущностей.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Если поиск по внутренней базе не связывает причины, людей и документы, попробуйте GraphRAG на одном ограниченном домене и сравните evidence recall с текущим RAG до миграции.</p></div>
+        <ul class="tags"><li>RAG</li><li>knowledge graph</li><li>open source</li></ul>
+        <a class="source-link" href="https://huggingface.co/papers/2607.11683" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>92</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread terminal" id="article-4">
+      <div class="spread-number">04</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Simon Willison <span>·</span> 21 июля 2026</p>
+        <h2>Nativ: Run AI models locally on your Mac</h2>
+        <p class="summary">Simon Willison разбирает Nativ — macOS-приложение на базе MLX для локального чата с моделями и localhost API.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Локальная модель может убрать передачу рабочих данных внешнему API и снизить задержку, но разработчику нужны понятный способ запуска, совместимость с локальным кэшем и интерфейс для собственных инструментов. «Локально» также не означает автоматически безопасно: важны модель, логи и доступ к API.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Nativ использует MLX и предоставляет настольный чат с локальными моделями на macOS.</li><li>Приложение поднимает API на localhost, поэтому к нему могут подключаться локальные инструменты и скрипты.</li><li>В заметке Willison отмечает, что Nativ обнаружил MLX-модели, уже находившиеся в его Hugging Face cache.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это краткий hands-on обзор, а не независимый бенчмарк или security audit; применимость ограничена macOS/Apple Silicon и политикой доступа к localhost на конкретной машине.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Для конфиденциальных черновиков и офлайн-утилит сначала проверьте локальную модель на одном Mac: изолируйте localhost API, измерьте качество на своих задачах и только затем подключайте рабочие данные.</p></div>
+        <ul class="tags"><li>локальные LLM</li><li>privacy</li><li>macOS</li></ul>
+        <a class="source-link" href="https://simonwillison.net/2026/Jul/21/nativ/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>90</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread academic" id="article-5">
+      <div class="spread-number">05</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Anthropic News <span>·</span> 22 июля 2026</p>
+        <h2>The Anthropic Economic Index connector</h2>
+        <p class="summary">Anthropic запустила connector для запросов к Economic Index — набору данных о наблюдаемом использовании AI в экономике.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Стратегию внедрения AI часто строят на громких прогнозах, хотя менеджеру важнее понять, какие задачи и профессии действительно затрагиваются. Доступ к срезам использования полезен для выбора пилота, обучения и контроля риска, если не принимать одну платформу за полную картину рынка.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Connector позволяет задавать Claude вопросы к Anthropic Economic Index напрямую.</li><li>Anthropic приводит примеры запросов по профессиям, использованию по штатам США, задачам учителей и автоматизации задач.</li><li>Индекс заявлен как измерение того, как AI фактически используется в экономике.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Данные и методика отражают наблюдения Anthropic, а не все AI-сервисы и не полный переписной срез экономики; выводы нельзя механически переносить на отдельную компанию.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Используйте такие данные как гипотезу для выбора задач пилота: сопоставьте внешний сигнал с собственными журналами работы, временем цикла и качеством результата.</p></div>
+        <ul class="tags"><li>экономика AI</li><li>данные</li><li>внедрение</li></ul>
+        <a class="source-link" href="https://www.anthropic.com/news/anthropic-economic-index-connector" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>88</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread data" id="article-6">
+      <div class="spread-number">06</div>
+      <div class="spread-copy">
+        <p class="eyebrow">OpenAI News <span>·</span> 22 июля 2026</p>
+        <h2>GPT‑5.6 is now the preferred model in Microsoft 365 Copilot</h2>
+        <p class="summary">OpenAI сообщает, что GPT‑5.6 стал предпочтительной моделью Microsoft 365 Copilot в Word, Excel, PowerPoint, Chat и Cowork.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Смена модели внутри привычного офисного продукта влияет на миллионы существующих рабочих процессов без отдельной миграции приложения. Для команды это повод не верить названию модели на слово, а повторно проверить качество, стоимость и границы автономности именно в документах, таблицах и коммуникациях.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Анонс охватывает Word, Excel, PowerPoint, Chat и Cowork в Microsoft 365 Copilot.</li><li>OpenAI называет GPT‑5.6 предпочтительной моделью для этой интеграции.</li><li>Это объявление о развёртывании в продукте, а не независимое сравнительное исследование производительности.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Детали доступности могут зависеть от лицензионного плана, региона и Microsoft 365 tenant; само сообщение OpenAI не заменяет измерения на корпоративных данных.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Если ваша организация использует Copilot, повторите короткий acceptance-набор в Word/Excel/PowerPoint: фактологичность, форматирование, политика данных и стоимость важнее общего обещания «лучше».</p></div>
+        <ul class="tags"><li>Microsoft 365</li><li>knowledge work</li><li>модели</li></ul>
+        <a class="source-link" href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>87</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread field-notes" id="article-7">
+      <div class="spread-number">07</div>
+      <div class="spread-copy">
+        <p class="eyebrow">The Batch <span>·</span> 17 июля 2026</p>
+        <h2>AI Overviews Land Google In Hot Water, GPT-Live Puts Reasoning in the Background, How to Tell If Your Model is Manipulative</h2>
+        <p class="summary">The Batch сообщает о GPT‑Live‑1 и GPT‑Live‑1 mini для обновлённого ChatGPT Voice: модели обрабатывают одновременный аудиоввод/вывод и могут передавать сложное рассуждение GPT‑5.5.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Голосовой интерфейс полезен лишь тогда, когда разговор не распадается при перебиваниях, паузах и сложных вопросах. Разделение низколатентного аудиослоя и более тяжёлого reasoning может дать естественный диалог, но создаёт новые вопросы: когда система переключается, какова задержка и что доступно разработчикам.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>OpenAI выпустила GPT‑Live‑1 и GPT‑Live‑1 mini 8 июля для переработанного ChatGPT Voice, по пересказу The Batch.</li><li>Модели поддерживают одновременный аудиоввод и вывод и могут делегировать трудное рассуждение GPT‑5.5.</li><li>The Batch приводит внутренний результат OpenAI на GPQA: 84,2% для GPT‑Live‑1 с high reasoning против 45,3% для Advanced Voice Mode.</li><li>На момент публикации The Batch отмечал отсутствие developer API для GPT‑Live.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это вторичный пересказ с внутренней метрикой OpenAI; GPQA не измеряет качество реального голосового продукта, а отсутствие API могло измениться после публикации.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Не проектируйте голосовой продукт вокруг непроверенного API: заранее разделите потоковый диалог и медленный reasoning, а качество проверяйте на перебиваниях, задержке и критических ошибках.</p></div>
+        <ul class="tags"><li>voice AI</li><li>reasoning</li><li>продукты</li></ul>
+        <a class="source-link" href="https://www.deeplearning.ai/the-batch/issue-362" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>85</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread blueprint" id="article-8">
+      <div class="spread-number">08</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Every <span>·</span> 21 июля 2026</p>
+        <h2>Drowning in Demos? Here’s a Better Way to Prototype</h2>
+        <p class="summary">Кейс Every рассказывает, как Whoop пересмотрела принятие решений после того, как AI-прототипирование создало избыток демонстраций.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Генеративная разработка резко удешевляет создание demo, но не делает выбор продукта проще: команда быстрее производит варианты, чем успевает сформулировать критерии, проверить риск и выбрать следующий эксперимент. Поэтому bottleneck смещается из написания кода в принятие решений.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Материал описывает кейс Whoop, где избыток AI-прототипов потребовал изменить процесс принятия решений.</li><li>Его центральная проблема — не дефицит идей или демо, а перегрузка сравнением вариантов.</li><li>Это практическая case study о workflow, а не измеренное независимое исследование эффективности.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Доступные сведения — редакционный кейс Every; он не доказывает, что тот же процесс сработает в другой команде или на другом продукте.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Введите для AI-прототипов «ворота решения»: один пользовательский вопрос, явный критерий успеха, владелец и правило остановки — до того как команда начнёт сравнивать десятки демо.</p></div>
+        <ul class="tags"><li>прототипирование</li><li>vibecoding</li><li>product workflow</li></ul>
+        <a class="source-link" href="https://every.to/p/drowning-in-demos-here-s-a-better-way-to-prototype" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>82</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread privacy" id="article-9">
+      <div class="spread-number">09</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Latent Space <span>·</span> 21 июля 2026</p>
+        <h2>Causal Models Need Causal Data — Xaira’s X-Cell model for Drug Discovery</h2>
+        <p class="summary">Интервью Latent Space с Xaira разбирает тезис: для предсказания экспрессии генов масштабировать нужно не только модель, но и информационно насыщенные причинные данные.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>В биологии модель может видеть много корреляций, но задачи drug discovery требуют предсказывать последствия вмешательства. Если обучающие данные слабо фиксируют причинный эффект, увеличение параметров способно упереться в потолок; ценностью становится дизайн эксперимента и качество измерений.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Собеседники Xaira утверждают, что 3,1B-модель перестала следовать scaling trend на меньшем наборе данных.</li><li>В интервью говорится, что примерно 30× более информационно насыщенные данные восстановили scaling с параметрами и compute.</li><li>Тема выпуска — X-Cell и предсказание gene expression для drug discovery, где причинный сигнал важнее одних наблюдательных корреляций.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это интервью с представителями компании; данные о масштабе, стоимости и сравнительной эффективности не являются независимой валидацией.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Для AI-for-science не начинайте с вопроса «какую модель увеличить»: сначала определите, какие интервенционные данные реально отличают причинную гипотезу от корреляции.</p></div>
+        <ul class="tags"><li>AI for science</li><li>биология</li><li>данные</li></ul>
+        <a class="source-link" href="https://www.latent.space/p/xaira" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>80</strong><small>/ 100</small></aside>
+    </article>
+
+    <article class="spread closing" id="article-10">
+      <div class="spread-number">10</div>
+      <div class="spread-copy">
+        <p class="eyebrow">Anthropic News <span>·</span> 20 июля 2026</p>
+        <h2>Apply for Anthropic’s AI for Science rare disease research grants</h2>
+        <p class="summary">Anthropic открыла гранты AI for Science для проектов по редким генетическим заболеваниям: принятым заявителям обещаны до $50 000 в Claude credits на шесть месяцев.</p>
+        <section class="context" aria-label="Контекст"><strong>Контекст</strong><p>Исследования редких болезней часто ограничены бюджетом на вычисления, доступом к специалистам и небольшими наборами данных. Программа кредитов может снизить порог для экспериментального применения моделей, но сама по себе не является доказательством биомедицинской валидности или клинической пользы.</p></section>
+        <section class="inside" aria-label="Как устроено"><strong>Как устроено</strong><ul><li>Программа сфокусирована на AI-for-Science проектах по редким генетическим заболеваниям.</li><li>Принятые заявители могут получить до $50 000 в Claude credits на шесть месяцев.</li><li>Указанный в объявлении дедлайн — 2 августа 2026 года, 23:59 PST.</li></ul></section>
+        <section class="caveat" aria-label="Ограничение"><strong>Ограничение</strong><p>Это программа доступа к вычислениям, не результат исследования; медицинские выводы требуют профильной валидации, а условия участия и сроки нужно сверять с первичным объявлением.</p></section>
+        <div class="takeaway"><strong>Практический вывод</strong><p>Если вы работаете с редкими заболеваниями, оцените заявку как ускоритель исследовательского прототипа — с заранее определёнными данными, биостатистической проверкой и запретом на клинические утверждения без валидации.</p></div>
+        <ul class="tags"><li>AI for science</li><li>гранты</li><li>редкие заболевания</li></ul>
+        <a class="source-link" href="https://www.anthropic.com/news/rare-disease-research-grants" rel="noopener noreferrer">Источник <span aria-hidden="true">↗</span></a>
+      </div>
+      <aside class="signal"><span>signal</span><strong>77</strong><small>/ 100</small></aside>
+    </article></main>
+  <footer><p>FOMO-утро собирает практические сигналы об AI-инструментах, технологиях, разработке, приватности и науке. Оценка signal — редакционный приоритет для этого выпуска, не мера объективной истинности.</p></footer>
+</body>
+</html>
